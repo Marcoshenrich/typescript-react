@@ -19,7 +19,9 @@ const Splash = () => {
     }
 
     interface weatherSnapshot {
-       clouds: number
+       clouds: {
+        all: number
+        }
        main: {
         feels_like: number
         temp_max: number
@@ -29,7 +31,7 @@ const Splash = () => {
 
 
 
-    const [parsedData, setParsedData] = useState(null)
+    const [parsedData, setParsedData] = useState<parsedData | null>(null)
 
     const fetchWeather = async () => {
         const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
@@ -49,7 +51,7 @@ const Splash = () => {
     return (
         <div>
             hello
-            {data && (parsedData.city.name)}
+            {parsedData && (parsedData?.city.name)}
         </div>
     );
 }
