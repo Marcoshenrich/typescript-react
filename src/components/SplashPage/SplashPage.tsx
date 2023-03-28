@@ -51,7 +51,8 @@ const SplashPage = () => {
 
     return (
         <div className="Splash-Page">
-            <img src={Solar} alt="" />
+            <img src={Solar} alt="" id="Splash-Image"/>
+
             <div className="Splash-Page-Welcome">
 
             </div>
