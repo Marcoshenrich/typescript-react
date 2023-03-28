@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { ChangeEvent, FormEvent } from 'react';
+import Solar from "../../assets/solar_field.jpeg"
 import "./SplashPage.css"
 
 
@@ -50,6 +51,7 @@ const SplashPage = () => {
 
     return (
         <div className="Splash-Page">
+            <img src={Solar} alt="" />
             <div className="Splash-Page-Welcome">
 
             </div>
