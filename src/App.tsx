@@ -9,9 +9,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <WeatherDisplay />
         <Routes>
-          {/* <Route path="/home" element={<Splash />} /> */}
+          <Route path="/" element={<Splash />} />
+          <Route path="/weather" element={<WeatherDisplay />} />
         </Routes>
       </BrowserRouter>
     </div>

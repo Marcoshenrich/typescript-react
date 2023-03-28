@@ -2,10 +2,6 @@ import "./WeatherDisplay.css"
 
 const WeatherDisplay: React.FC = () => {
 
-
-
-
-
     return (
         <div  className="Weather-Display">
             <div className="WD-Welcome-Banner">
