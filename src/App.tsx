@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Splash from "./components/splash/splash";
+import Splash from "./components/SplashPage/SplashPage";
 
 import WeatherDisplay from './components/WeatherDisplay/WeatherDisplay';
 

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 
-const Splash = () => {
+const Repo = () => {
 
     interface parsedData {
         city: {
@@ -14,14 +14,14 @@ const Splash = () => {
     }
 
     interface weatherSnapshot {
-       clouds: {
-        all: number
+        clouds: {
+            all: number
         }
-       main: {
-        feels_like: number
-        temp_max: number
-        temp_min: number
-       }
+        main: {
+            feels_like: number
+            temp_max: number
+            temp_min: number
+        }
     }
 
 
@@ -38,9 +38,9 @@ const Splash = () => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchWeather()
-    },[])
+    }, [])
 
     return (
         <div>
@@ -50,4 +50,4 @@ const Splash = () => {
     );
 }
 
-export default Splash;
+export default Repo;
