@@ -54,7 +54,8 @@ const SplashPage = () => {
             <img src={Solar} alt="" id="Splash-Image"/>
 
             <div className="Splash-Page-Welcome">
-
+                <div id="SPW-Header">Solarfy</div>
+                <div id="SPW-Text">See how much a single solar panel can generate in your area in the next five days</div>
             </div>
             <div className="Splash-Page-Input-Container">
                 <div id="SPI-Text">  
