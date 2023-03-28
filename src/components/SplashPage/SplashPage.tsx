@@ -4,15 +4,48 @@ import { ChangeEvent, FormEvent } from 'react';
 import "./SplashPage.css"
 
 
+interface zipData {
+    results: {
+        [zip: number]: {
+            city: string
+        }
+    }
+}
+
+
 
 const SplashPage = () => {
 
-    const [zipCode, setZipcode] = useState("")
+    const [zipCode, setZipcode] = useState<string>("")
+    const [placeHolder, setPlaceHolder] = useState<string>("")
+
+    const fetchZip = async (zip: string) => {
+        const res = await fetch(`https://app.zipcodebase.com/api/v1/search?apikey=${process.env.REACT_APP_ZIP_API_KEY}&codes=${zip}&country=US`)
+        if (res.ok) {
+            const data = await res.json();
+            reviewZipData(data)
+        } else {
+            console.log("error in fetchZip")
+        }
+    }
+
+    const reviewZipData = (data: zipData) => {
+        console.log(data)
+        if (Array.isArray(data.results)) {
+            setPlaceHolder("Invalid Zip")
+        } else {
+            console.log(data)
+        }
+    }
+
+
+
 
     const submitZip = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log(zipCode)
+        fetchZip(zipCode)
         setZipcode("")
+        setPlaceHolder("")
     }
 
     return (
@@ -27,7 +60,7 @@ const SplashPage = () => {
 
                 <div className="SPI-Form-Container">
                     <form onSubmit={submitZip} className="SPI-Form">
-                        <input id="SPI-Input" type="text" value={zipCode} onChange={(e) => { setZipcode(e.target.value)}}/>
+                        <input id="SPI-Input" type="text" value={zipCode} placeholder={placeHolder} onChange={(e) => { setZipcode(e.target.value)}}/>
                         <button id="SPI-Button" >Submit</button>
                     </form>
                 </div>
