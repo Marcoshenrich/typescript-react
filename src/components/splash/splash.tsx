@@ -1,12 +1,7 @@
 
-
-// 
-
 import { useEffect, useState } from "react";
 
 const Splash = () => {
-
-    type data = any
 
     interface parsedData {
         city: {

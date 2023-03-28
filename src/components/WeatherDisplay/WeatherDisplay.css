@@ -1,0 +1,26 @@
+
+
+.Weather-Display {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+}
+
+.WD-Welcome-Banner {
+    width: 100%;
+    height: 25vh;
+    background-color: pink;
+}
+.WD-Info {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#WD-Info-Separator {
+    width: .5px;
+    height: 100%;
+    background-color: black;
+}
+
