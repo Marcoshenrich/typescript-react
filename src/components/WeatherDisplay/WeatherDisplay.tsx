@@ -20,10 +20,10 @@ const WeatherDisplay: React.FC = () => {
                     <div>Low</div>
                     <div></div>
                 </div>
-                <div>
-                    <div id="WD-Info-Separator"></div>
+                <div className="WD-Info-Separator">
+                    <div id="WD-Info-Separator-Line"></div>
                 </div>
-                <div>
+                <div className="WD-Info-Image-Container">
                     image
                 </div>
             </div>
