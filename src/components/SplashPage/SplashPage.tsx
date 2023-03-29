@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { ChangeEvent, FormEvent } from 'react';
+import { useNavigate } from "react-router-dom";
 import Solar from "../../assets/solar_field.jpeg"
 import "./SplashPage.css"
 
@@ -16,6 +17,7 @@ interface zipData {
 
 
 const SplashPage = () => {
+    const navigate = useNavigate()
 
     const [zipCode, setZipcode] = useState<string>("")
     const [placeHolder, setPlaceHolder] = useState<string>("")
@@ -36,10 +38,9 @@ const SplashPage = () => {
             setPlaceHolder("Invalid Zip")
         } else {
             console.log(data)
+            navigate("/weather")
         }
     }
-
-
 
 
     const submitZip = (e: FormEvent<HTMLFormElement>) => {
@@ -48,6 +49,8 @@ const SplashPage = () => {
         setZipcode("")
         setPlaceHolder("")
     }
+
+
 
     return (
         <div className="Splash-Page">

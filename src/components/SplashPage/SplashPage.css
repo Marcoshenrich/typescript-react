@@ -19,13 +19,13 @@
 
 #SPW-Header {
     color: white;
-    font-size: 100px;
+    font-size: 80px;
     font-family: 'Copperplate', Arial, serif;
 }
 
 #SPW-Text {
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     padding: 40px;
     text-align: center;
 }
@@ -41,7 +41,7 @@
 
 
 .Splash-Page-Input-Container {
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -57,11 +57,12 @@
 }
 
 #SPI-Input {
-    width: 100px;
-    height: 30px;
-    font-size: 24px;
+    width: 80px;
+    height: 24px;
+    font-size: 20px;
     padding: 10px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .SPI-Form{
@@ -79,7 +80,18 @@
 }
 
 
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
+#SPW-Header {
+        color: white;
+        font-size: 50px;
+        font-family: 'Copperplate', Arial, serif;
+    }
 
-} */
+    #SPW-Text {
+        color: white;
+        font-size: 15px;
+        padding: 40px;
+        text-align: center;
+    }
+}
 
