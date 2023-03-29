@@ -5,6 +5,8 @@ import { TbSnowflake } from "react-icons/tb"
 import { WiHumidity } from "react-icons/wi"
 import { BsFillPersonPlusFill } from "react-icons/bs"
 
+import Repo from "../Repo/Repo"
+
 const WeatherDisplay: React.FC = () => {
 
     return (
@@ -41,6 +43,8 @@ const WeatherDisplay: React.FC = () => {
                             <div><WiHumidity /> Humidity</div>
                             <div>35</div>
                         </div>
+
+                        <Repo/>
 
                     </div>
                 </div>
