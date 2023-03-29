@@ -1,45 +1,47 @@
 .Splash-Page {
     height: 100vh;
     width: 100vw;
-    background-color: darkblue;
+    background-color: black;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
 }
 
 .Splash-Page-Welcome {
-    height: 25vh;
+    height: 40vh;
     width: 100vw;
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center
 }
 
 #SPW-Header {
     color: white;
-    font-size: 50px;
+    font-size: 100px;
     font-family: 'Copperplate', Arial, serif;
 }
 
 #SPW-Text {
     color: white;
-    font-size: 20px;
+    font-size: 30px;
+    padding: 40px;
+    text-align: center;
 }
 
 #Splash-Image {
-
+    filter:brightness(50%);
     position: absolute;
     object-fit: cover;
     justify-self: center;
+    width: 100vw;
     height: 100vh;
 }
 
 
 .Splash-Page-Input-Container {
-    height: 75vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -51,6 +53,7 @@
 
 #SPI-Text {
     font-size: 24px;
+    color: white;
 }
 
 #SPI-Input {
@@ -68,11 +71,15 @@
     justify-content: space-around;
     height: 150px;
     width: 200px;
-    background-color: green;
 }
 
 #SPI-Button {
     width: 75px;
     height: 25px;
 }
+
+
+/* @media (max-width: 800px) {
+
+} */
 
