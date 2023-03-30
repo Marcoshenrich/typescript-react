@@ -24,7 +24,7 @@ const SplashPage: React.FC<zipProps> = ({ zipDataObj, setZipDataObj }) => {
         const res = await fetch(`https://app.zipcodebase.com/api/v1/search?apikey=${process.env.REACT_APP_ZIP_API_KEY}&codes=${zip}&country=US`)
         if (res.ok) {
             const data = await res.json();
-            setZipDataObj(data)
+            reviewZipData(data)
         } else {
             console.log("error in fetchZip")
         }
@@ -34,8 +34,8 @@ const SplashPage: React.FC<zipProps> = ({ zipDataObj, setZipDataObj }) => {
         if (Array.isArray(data.results)) {
             setPlaceHolder("Invalid Zip")
         } else {
-            console.log(data)
-            // navigate("/weather")
+            console.log("zip data is clean")
+            setZipDataObj(data)
         }
     }
 

@@ -1,5 +1,10 @@
 
 
+export interface cityObj {
+    [cityKey: string]: number
+}
+
+
 export interface parsedData {
     city: {
         country: string
@@ -12,10 +17,10 @@ export interface parsedData {
 
 export interface zipData {
     results: {
-        [zip: number]: {
+        [zip: number]: [{
             city: string
             state_code: string
-        }
+        }]
     }
 }
 
