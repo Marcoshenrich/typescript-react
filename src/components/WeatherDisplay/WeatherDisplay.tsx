@@ -35,14 +35,20 @@ const WeatherDisplay: React.FC<weatherProps> = ({ parsedDataObj, setParsedDataOb
 
     const tempSwitcher = (e: SyntheticEvent):void => {
         e.preventDefault()
-        setTempType("celsius")
+        if (tempType === "farenheit") {
+            setTempType("celsius")
+        } else {
+            setTempType("farenheit")
+        }
+
     }
 
     return (
         <div  className="Weather-Display">
             <div className="WD-Welcome-Banner">
                 <div id="WDW-Body">Your Weather Today in {parsedDataObj?.city.name} </div>
-                <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp))}&#176;</div>
+                <div id="WDW-Main-Temp">{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp))}&#176;</div>
+                <div id="WD-Temp-Switcher"onClick={tempSwitcher}>C</div>
             </div>
              <div className="WD-Info-Container">
                 <div className="WD-Info-Box">
@@ -66,7 +72,7 @@ const WeatherDisplay: React.FC<weatherProps> = ({ parsedDataObj, setParsedDataOb
 
                         <div className="WD-Info-Set">
                             <div><RiWindyFill /> Wind</div>
-                            <div>{parsedDataObj && (Math.floor(parsedDataObj?.list[0].wind.speed))};</div>
+                            <div>{parsedDataObj && (Math.floor(parsedDataObj?.list[0].wind.speed))}</div>
                         </div>
 
                         <div className="WD-Info-Set">

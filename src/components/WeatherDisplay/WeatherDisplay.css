@@ -8,16 +8,29 @@
 }
 
 .WD-Welcome-Banner {
+    margin-top: 50px;
     width: 100%;
-    height: 25vh;
+    height: 20vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+
 }
 
 
 #WDW-Body {
     font-size: 30px;
+}
+
+#WD-Temp-Switcher {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+}
+
+#WDW-Main-Temp {
+    font-size: 40px;
 }
 
 .WD-Info-Container {
