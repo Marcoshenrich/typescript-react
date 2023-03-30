@@ -5,18 +5,16 @@ import { useNavigate } from "react-router-dom";
 import Solar from "../../assets/solar_field.jpeg"
 import "./SplashPage.css"
 
-
-interface zipData {
-    results: {
-        [zip: number]: {
-            city: string
-        }
-    }
-}
+import { zipData } from "../interfaces/interface";
 
 
+type zipProps = {
+    zipDataObj: zipData | null;
+    setZipDataObj: React.Dispatch<React.SetStateAction<zipData | null>>;
+};
 
-const SplashPage = () => {
+const SplashPage: React.FC<zipProps> = ({ zipDataObj, setZipDataObj }) => {
+
     const navigate = useNavigate()
 
     const [zipCode, setZipcode] = useState<string>("")
@@ -26,19 +24,18 @@ const SplashPage = () => {
         const res = await fetch(`https://app.zipcodebase.com/api/v1/search?apikey=${process.env.REACT_APP_ZIP_API_KEY}&codes=${zip}&country=US`)
         if (res.ok) {
             const data = await res.json();
-            reviewZipData(data)
+            setZipDataObj(data)
         } else {
             console.log("error in fetchZip")
         }
     }
 
     const reviewZipData = (data: zipData) => {
-        console.log(data)
         if (Array.isArray(data.results)) {
             setPlaceHolder("Invalid Zip")
         } else {
             console.log(data)
-            navigate("/weather")
+            // navigate("/weather")
         }
     }
 

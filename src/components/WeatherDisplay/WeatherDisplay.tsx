@@ -5,37 +5,12 @@ import { TbSnowflake } from "react-icons/tb"
 import { WiHumidity } from "react-icons/wi"
 import { BsFillPersonPlusFill } from "react-icons/bs"
 
-
+import { weatherSnapshot, parsedData } from "../interfaces/interface"
 
 import { useEffect, useState } from "react";
 import { cityIdObj } from "../../city_code_bank/us_cities.js"
 
 const WeatherDisplay: React.FC = () => {
-
-    interface parsedData {
-        city: {
-            country: string
-            name: string
-            sunrise: number
-            sunset: number
-        }
-        list: weatherSnapshot[]
-    }
-
-    interface weatherSnapshot {
-        clouds: {
-            all: number
-        }
-        main: {
-            feels_like: number
-            temp_max: number
-            temp_min: number
-            humidity: number
-        }
-        wind: {
-            speed: number
-        }
-    }
 
 
 
