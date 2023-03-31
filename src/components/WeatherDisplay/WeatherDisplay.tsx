@@ -20,6 +20,8 @@ const WeatherDisplay: React.FC<weatherProps> = ({ parsedDataObj, setParsedDataOb
     const [tempType, setTempType] = useState<string>("farenheit")
 
 
+
+
     const tempConverter = (temp: number): number => {
         switch (tempType) {
             case "farenheit":
@@ -44,52 +46,58 @@ const WeatherDisplay: React.FC<weatherProps> = ({ parsedDataObj, setParsedDataOb
     }
 
     return (
-        <div  className="Weather-Display">
-            <div className="WD-Welcome-Banner">
-                <div id="WDW-Body">Your Weather Today in {parsedDataObj?.city.name} </div>
-                <div id="WDW-Main-Temp">{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp))}&#176;</div>
-                <div id="WD-Temp-Switcher"onClick={tempSwitcher}>C</div>
-            </div>
-             <div className="WD-Info-Container">
-                <div className="WD-Info-Box">
-                    <div id="WD-Info-Header">Your Weather Today</div>
-                    <div className="WD-Info-Body">
 
-                        <div className="WD-Info-Set">
-                            <div><BsFillPersonPlusFill /> Feels Like</div>
-                            <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.feels_like))}&#176;</div>
-                        </div>
-
-                        <div className="WD-Info-Set">
-                            <div><IoIosSunny /> High</div>
-                            <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp_max))}&#176;</div>
-                        </div>
-
-                        <div className="WD-Info-Set">
-                            <div><TbSnowflake /> Low</div>
-                            <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp_min))}&#176;</div>
-                        </div>
-
-                        <div className="WD-Info-Set">
-                            <div><RiWindyFill /> Wind</div>
-                            <div>{parsedDataObj && (Math.floor(parsedDataObj?.list[0].wind.speed))}</div>
-                        </div>
-
-                        <div className="WD-Info-Set">
-                            <div><WiHumidity /> Humidity</div>
-                            <div>{parsedDataObj && (parsedDataObj?.list[0].main.humidity)}</div>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="WD-Info-Separator">
-                    <div id="WD-Info-Separator-Line"></div>
-                </div>
-                <div className="WD-Info-Box">
-                    image
-                </div>
-            </div>
+        <div className="Weather-Display">
+            hello
         </div>
+
+
+        // <div  className="Weather-Display">
+        //     <div className="WD-Welcome-Banner">
+        //         <div id="WDW-Body">Your Weather Today in {parsedDataObj?.city.name} </div>
+        //         <div id="WDW-Main-Temp">{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp))}&#176;</div>
+        //         <div id="WD-Temp-Switcher"onClick={tempSwitcher}>C</div>
+        //     </div>
+        //      <div className="WD-Info-Container">
+        //         <div className="WD-Info-Box">
+        //             <div id="WD-Info-Header">Your Weather Today</div>
+        //             <div className="WD-Info-Body">
+
+        //                 <div className="WD-Info-Set">
+        //                     <div><BsFillPersonPlusFill /> Feels Like</div>
+        //                     <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.feels_like))}&#176;</div>
+        //                 </div>
+
+        //                 <div className="WD-Info-Set">
+        //                     <div><IoIosSunny /> High</div>
+        //                     <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp_max))}&#176;</div>
+        //                 </div>
+
+        //                 <div className="WD-Info-Set">
+        //                     <div><TbSnowflake /> Low</div>
+        //                     <div>{parsedDataObj && (tempConverter(parsedDataObj?.list[0].main.temp_min))}&#176;</div>
+        //                 </div>
+
+        //                 <div className="WD-Info-Set">
+        //                     <div><RiWindyFill /> Wind</div>
+        //                     <div>{parsedDataObj && (Math.floor(parsedDataObj?.list[0].wind.speed))}</div>
+        //                 </div>
+
+        //                 <div className="WD-Info-Set">
+        //                     <div><WiHumidity /> Humidity</div>
+        //                     <div>{parsedDataObj && (parsedDataObj?.list[0].main.humidity)}</div>
+        //                 </div>
+
+        //             </div>
+        //         </div>
+        //         <div className="WD-Info-Separator">
+        //             <div id="WD-Info-Separator-Line"></div>
+        //         </div>
+        //         <div className="WD-Info-Box">
+        //             image
+        //         </div>
+        //     </div>
+        // </div>
     )
 }
 
